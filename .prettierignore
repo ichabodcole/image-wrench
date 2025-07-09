@@ -1,0 +1,13 @@
+node_modules
+.nuxt
+.env
+.env.local
+.env.development
+.env.production
+.env.test
+
+app/components/ui
+components.json
+package.json
+pnpm-lock.yaml
+CHANGELOG.md
