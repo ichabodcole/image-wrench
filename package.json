@@ -2,7 +2,7 @@
   "name": "image-wrench",
   "description": "A collection of utility functions, mostly for image and color processing.",
   "private": true,
-  "version": "1.0.1",
+  "version": "1.0.2",
   "type": "module",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
