@@ -21,6 +21,7 @@ export default defineConfig({
   build: {
     lib: {
       entry: {
+        index: resolve(__dirname, 'src/index.ts'),
         'image/resize': resolve(__dirname, 'src/image/resize.ts'),
         'image/generation': resolve(__dirname, 'src/image/generation.ts'),
         'image/metadata': resolve(__dirname, 'src/image/metadata.ts'),
