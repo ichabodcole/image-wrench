@@ -2,6 +2,16 @@
 import { defineConfig } from 'vite';
 import { resolve } from 'path';
 import dts from 'vite-plugin-dts';
+import { readFileSync } from 'fs';
+
+// Auto-externalize all dependencies
+const pkg = JSON.parse(readFileSync('./package.json', 'utf8'));
+const external = [
+  ...Object.keys(pkg.dependencies || {}),
+  ...Object.keys(pkg.peerDependencies || {}),
+  /__tests__/,
+  'vitest',
+];
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -36,7 +46,7 @@ export default defineConfig({
       fileName: (format, entryName) => `${entryName}.js`,
     },
     rollupOptions: {
-      external: [/__tests__\//, 'vitest'],
+      external,
       output: {
         preserveModules: true,
         preserveModulesRoot: 'src',
